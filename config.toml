@@ -1,0 +1,34 @@
+# The URL the site will be built for
+base_url = "https://haskell-cryptography.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "adidoks"
+
+title = "Haskell Cryptography Group"
+
+[extra]
+# Put all your custom variables here
+
+[[extra.menu.main]]
+name = "Projects"
+section = "docs"
+url = "/projects/"
+weight = 10
+
+[[extra.menu.main]]
+name = "Blog"
+section = "blog"
+url = "/blog/"
+weight = 20
+
+[[section.extra]]
+repo_url = "https://github.com/haskell-cryptography/"
