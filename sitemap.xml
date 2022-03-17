@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://haskell-cryptography.org/</loc>
+    </url>
+    <url>
+        <loc>https://haskell-cryptography.org/authors/</loc>
+    </url>
+    <url>
+        <loc>https://haskell-cryptography.org/blog/</loc>
+    </url>
+    <url>
+        <loc>https://haskell-cryptography.org/blog/hello-world/</loc>
+        <lastmod>2022-03-08T18:14:00</lastmod>
+    </url>
+    <url>
+        <loc>https://haskell-cryptography.org/blog/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://haskell-cryptography.org/privacy-policy/</loc>
+    </url>
+    <url>
+        <loc>https://haskell-cryptography.org/projects/</loc>
+    </url>
+</urlset>
