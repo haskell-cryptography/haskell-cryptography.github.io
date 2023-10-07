@@ -9,8 +9,9 @@ The Haskell Cryptography Group presents its suite of libsodium packages:
 | [sel][sel]               | ![sel-ci]        | ![sel-version] |
 | [libsodium‑bindings][lb] | ![lb-ci]         | ![lb-version]  |
 
+## Migration Guides
 
-
+* [Migrating from `password`](/projects/libsodium/guides/migrating-from-password)
 
 [sel]: https://github.com/haskell-cryptography/libsodium-bindings/tree/main/sel
 [sel-ci]: https://github.com/haskell-cryptography/libsodium-bindings/actions/workflows/sel.yml/badge.svg
@@ -19,3 +20,5 @@ The Haskell Cryptography Group presents its suite of libsodium packages:
 [lb]: https://github.com/haskell-cryptography/libsodium-bindings/tree/main/libsodium-bindings
 [lb-ci]: https://github.com/haskell-cryptography/libsodium-bindings/actions/workflows/libsodium-bindings.yml/badge.svg
 [lb-version]: https://img.shields.io/hackage/v/libsodium-bindings.svg
+
+
