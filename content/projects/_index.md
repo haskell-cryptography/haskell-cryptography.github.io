@@ -5,7 +5,7 @@ template = "projects/index.html"
 [[extra.list]]
 title = "Libsodium bindings"
 content = "Static bindings to the Libsodium C library and Haskell wrapper"
-url = "https://github.com/orgs/haskell-cryptography/repositories?q=topic%3Alibsodium&type=all&language=&sort="
+url = "/projects/libsodium/"
 
 [[extra.list]]
 title = "Blake3 bindings"

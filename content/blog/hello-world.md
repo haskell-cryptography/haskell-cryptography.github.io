@@ -6,9 +6,6 @@ updated = 2022-03-08T18:14:00
 draft = false # Leave this as true so that it is not published
 template = "blog/page.html"
 
-[taxonomies]
-authors = ["Public"]
-
 [extra]
 lead = "The Haskell Cryptography Group is proud to publicly broadcast its existence to the wider community."
 +++
