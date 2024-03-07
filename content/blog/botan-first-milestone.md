@@ -129,9 +129,7 @@ Finally, we'd also like to continue improving, unifying, and standardizing the `
 
 These are some of the things that we'd like to accomplish over the coming months.
 
-You can find more details in the update[^3] [second funding proposal][second proposal]. This proposal is a continuation of the efforts of the first proposal, and is motivated by the same long-term goals.
-
-[^3]: Update is not yet live at time of writing - if it hasn't been updated yet at time of reading, check back in a day or so.
+You can find more details in the updated [second funding proposal][second proposal]. This proposal is a continuation of the efforts of the first proposal, and is motivated by the same long-term goals.
 
 # A flag planted on the horizon
 
@@ -167,9 +165,9 @@ There's a whole host of interesting and useful cryptography algorithms that have
 
 Once we have a stable foundation, such as `botan`, we want to move on to implementation of more advanced algorithms, such as Merkle trees and Signal's [Double ratchet][double ratchet] / [Apple's PQ3][apple pq3]
 
-We don't want you to be messing around with cryptographic primitives - we want you importing libraries like `double-ratchet`[^4] and `sparse-merkle`[^4] and `distributed-json`[^4] instead of having to implement it yourself.
+We don't want you to be messing around with cryptographic primitives - we want you importing libraries like `double-ratchet`[^3] and `sparse-merkle`[^3] and `distributed-json`[^3] instead of having to implement it yourself.
 
-[^4]: These libraries do not yet exist, but we'd like them to.
+[^3]: These libraries do not yet exist, but we'd like them to.
 
 ## Building an application framework that takes care of cryptography & security
 
