@@ -200,7 +200,24 @@ Executive Director, Haskell Foundation
 
 ### Appendix: Links
 
-[haskell cryptography croup]: https://haskell-cryptography.org/ "Haskell Cryptography Group"
+- [Haskell Cryptography Group][haskell cryptography group]
+- [Haskell Foundation][haskell foundation]
+- [Mercury][mercury]
+- [Mercury hiring][mercury hiring]
+- [botan-bindings][botan-bindings]
+- [botan-low][botan-low]
+- [botan][botan]
+- [Botan audit][botan audit]
+- [First proposal][first proposal]
+- [Second proposal][second proposal]
+- [Devlog][devlog]
+- [Cryptographic typeclasses][cryptographic typeclasses]
+- [Double-ratchet][double ratchet]
+- [Apple PQ3][apple pq3]
+
+<!-- Link references -->
+
+[haskell cryptography group]: https://haskell-cryptography.org/ "Haskell Cryptography Group"
 
 [haskell foundation]: https://haskell.foundation/ "Haskell Foundation"
 
@@ -228,4 +245,4 @@ Executive Director, Haskell Foundation
 
 [apple pq3]: https://security.apple.com/blog/imessage-pq3/ "Apple PQ3"
 
-
+<!-- Footnotes are embedded elsewhere -->
