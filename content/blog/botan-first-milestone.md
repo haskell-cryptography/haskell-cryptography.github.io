@@ -28,13 +28,16 @@ By binding to Botan, we have solved a significant problem of providing much of t
 
 Do you use one of the following libraries?
 
-- `crypton` / `cryptonite`
-- `libsodium`
-- `saltine`
+- `cryptohash`
+- `crypto-pubkey-types`
+- `crypto-cipher-types`
+- `cryptonite`
+- `crypton` 
+- `password`
 
 That's where you come in! We'd like you to consider giving [botan][botan github] a try!
 
-`botan-low` is surprisingly viable out-of-box, and `botan` will be having it's own `0.0.1` release soon enough. We are interested in seeing how they perform in the real world, and we can only do that with users - we can't listen to your feedback if there isn't any!
+`botan-low` is viable out-of-box, and `botan` will be having it's own `0.0.1` release soon enough. We are interested in seeing how they perform in the real world, and we can only do that with users - we can't listen to your feedback if there isn't any!
 
 Or perhaps you may be a user of a library with one of these buried deep in the dependencies?
 
@@ -48,7 +51,7 @@ Or perhaps you may be a user of a library with one of these buried deep in the d
 - `warp`
 - `websockets`
 
-There's some pretty popular libraries on that list there, and their list of transitive dependents is quite large. These libraries sit at the root of a lot of production haskell code, and anything involving networking, APIs, and the internet is likely to depend on at least one of them. 
+These are popular libraries, and their list of transitive dependents is quite large. They sit at the root of a lot of production haskell code, and anything involving networking, APIs, and the internet is likely to depend on at least one of them. 
 
 Would it surprise you that they are all directly or indirectly dependent on `crypton`, which contains unaudited C implementations that must be maintained by the Haskell community as a fork after `cryptonite` was abandoned by its original author.
 
@@ -86,7 +89,7 @@ We'd like to spend a good chunk of time improving the installation process, with
 
 [^1]: Definitely more highly requested than anticipated
 
-We're also looking into using `build-type: Configure` for bundling Botan C++ as a Haskell package for easy installation on all operating systems - we'd like for usage to be as easy as adding `botan` to your dependencies.
+We're also looking into using `build-type: Configure` to automatically fetch and/or build the latest compatible version of Botan C++ via Cabal if it is not already installed, in order to streamline the process on all operating systems - we'd like for usage to be as easy as adding `botan` to your dependencies.
 
 ### Development of a drop-in interface replacement for `crypton`
 
