@@ -14,11 +14,9 @@ lead = "After 8 months of work, we've reached an important milestone. Now we're 
 
 What are you using cryptography for? Would you be interested in trying something new? Perhaps an alternate backend for your cryptography needs?
 
-We're working on `botan`, a cryptographic kitchen sink, and after 8 months of work, we've reached an important milestone: we've successfully published the first released version `0.0.1` of  [botan-bindings][botan-bindings] and [botan-low][botan-low], and `botan` has made it to [package candidate][botan] status!
+I am Leo Dillinger, a member of [Haskell Cryptography Group][haskell cryptography group], coordinating with the [Haskell Foundation][haskell foundation] to develop free and open-source software for you and the Haskell ecosystem.
 
-Now we are hard at work on getting the first release version of `botan` ready too, and could use your feedback!
-
-## What is Botan?
+We've been working on `botan`, a cryptographic kitchen sink, and after 8 months of work, we have reached an important milestone: we've successfully published the first released version `0.0.1` of  [botan-bindings][botan-bindings] and [botan-low][botan-low], and `botan` has made it to [package candidate][botan] status. Now, we are hard at work on getting the first release version of `botan` ready too, and could use your feedback!
 
 Botan is an comprehensive, open-source, BSD-licenced, C++ cryptography library with a stable C API. It offers a broad variety of functionality and algorithms, including **post-quantum cryptography**, is developed and maintained by an active community, and has been [audited][botan audit] in the past.
 
@@ -61,19 +59,11 @@ Having a solid, reliable, and well-maintained cryptography libraries is a huge b
 
 What are you using cryptography for? Let us know in the comments or with upvotes.
 
-## Who are we?
-
-I am Leo Dillinger, a member of [Haskell Cryptography Group][haskell cryptography group], and I am working with the [Haskell Foundation][haskell foundation] to develop free and open-source software for you and the Haskell ecosystem.
-
-## What are our goals?
-
-We seek to provide trusted, open-source cryptography solutions to you. Much of the existing Haskell cryptography ecosystem is aging, unmaintained and unaudited, or very limited in scope, we are seeking to improve that.
-
-Today, we're here to tell you about what is coming next.
-
 ## A new phase
 
-As we all know, perfect is the enemy of good; no software is perfect the first time, and we release things when they work, and then continue to improve them. And so we hope that this is simply the first version and first step on a journey of many improvements small and large.
+Today, we're here to tell you about what we're working on next.
+
+As we all know, perfect is the enemy of good; no software is perfect the first time, and we release things when they work, and then continue to improve them. We hope that this is simply the first version and first step on a journey of many improvements small and large.
 
 With this milestone, the project enters a new phase in the software development lifecycle - maintenance and development. During initial development, we were nimble, and could make choices arbitrarily - but now that we have something that works, with an initial release and users, we have to keep it working all the while we continue further development. We now have other people invested in this, and can't make choices willy-nilly - we owe it to our users and stakeholders to listen to them.
 
