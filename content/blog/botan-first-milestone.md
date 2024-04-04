@@ -1,8 +1,8 @@
 +++
 title = "Botan: The first milestone"
 description = "A step towards improving the state of Haskell cryptography"
-date = 2024-06-03T12:15:00
-updated = 2024-06-03T12:15:00
+date = 2024-03-11T12:15:00
+updated = 2024-03-11T12:15:00
 draft = false # Leave this as true so that it is not published
 template = "blog/page.html"
 
