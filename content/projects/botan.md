@@ -2,7 +2,7 @@
 title = "Botan Bindings"
 +++
 
-The Haskell Cryptography Group presents its suite of libsodium packages:
+The Haskell Cryptography Group presents its suite of Botan packages:
 
 | Package                          | Status               | Version                  |
 |----------------------------------|----------------------|--------------------------|
