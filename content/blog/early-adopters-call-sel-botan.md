@@ -30,12 +30,15 @@ and
 sel ^>=0.0.1,
 ```
 
-For security reasons, the bindings do not bundle the underlying C and C++ libraries, you have to install them yourself.
+For security reasons, the bindings do not bundle the underlying C and C++ libraries, you have to install them yourself:
+
+* [Botan3 building from source](https://botan.randombit.net/handbook/building.html)
+* [Libsodium in package repositories](https://repology.org/project/libsodium/versions)
 
 Please let us know if you have any issue on the the ticket trackers:
 
-* https://github.com/haskell-cryptography/libsodium-bindings/issues/new
-* https://github.com/haskell-cryptography/botan/issues/new
+* [Libsodium bindings tracker](https://github.com/haskell-cryptography/libsodium-bindings/issues/new)
+* [Botan bindings tracker](https://github.com/haskell-cryptography/botan/issues/new)
 
 
 [sel]: https://flora.pm/packages/@hackage/sel
