@@ -4,12 +4,12 @@ template = "projects/index.html"
 
 [[extra.list]]
 title = "Libsodium bindings"
-content = "Bindings to the Libsodium C library and high-level wrapper"
+content = "Bindings to the Libsodium C library and high level wrapper"
 url = "/projects/libsodium/"
 
 [[extra.list]]
 title = "Botan bindings"
-content = "Bindings to the Botan C++ library and high-level Haskell wrapper"
+content = "Bindings to the Botan C++ library and high level Haskell wrapper"
 url = "/projects/botan/"
 
 [[extra.list]]
