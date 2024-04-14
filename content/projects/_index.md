@@ -4,18 +4,23 @@ template = "projects/index.html"
 
 [[extra.list]]
 title = "Libsodium bindings"
-content = "Static bindings to the Libsodium C library and Haskell wrapper"
+content = "Bindings to the Libsodium C library and high level wrapper"
 url = "/projects/libsodium/"
 
 [[extra.list]]
-title = "Blake3 bindings"
-content = "Static bindings to the Blake3 C library and Haskell wrapper"
-url = "https://github.com/orgs/haskell-cryptography/repositories?q=topic%3Ablake3&type=all&language=&sort="
+title = "Botan bindings"
+content = "Bindings to the Botan C++ library and high level Haskell wrapper"
+url = "/projects/botan/"
+
+[[extra.list]]
+title = "One-Time Password"
+content = "TOTP and HOTP for your Two-Factor Authentication needs"
+url = "/projects/one-time-password"
 
 [[extra.list]]
 title = "OpenSSL bindings"
 content = "Bindings to OpenSSL, static and dynamic, with Haskell wrappers"
-url = "https://github.com/haskell-cryptography?q=topic%3Aopenssl&type=all&language=&sort="
+url = "/projects/hsopenssl"
 
 [[extra.list]]
 title = "And many more"

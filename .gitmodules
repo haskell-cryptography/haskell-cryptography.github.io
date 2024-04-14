@@ -1,3 +1,4 @@
 [submodule "themes/adidoks"]
 	path = themes/adidoks
-	url = https://github.com/aaranxu/adidoks.git
+	url = https://github.com/aaranxu/adidoks
+	branch = main
