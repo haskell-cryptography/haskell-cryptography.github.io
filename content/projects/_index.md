@@ -13,7 +13,7 @@ content = "Bindings to the Botan C++ library and high level Haskell wrapper"
 url = "/projects/botan/"
 
 [[extra.list]]
-title = "One Time Password"
+title = "One-Time Password"
 content = "TOTP and HOTP for your Two-Factor Authentication needs"
 url = "/projects/one-time-password"
 

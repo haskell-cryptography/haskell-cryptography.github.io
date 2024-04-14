@@ -1,5 +1,5 @@
 +++
-title = "One Time Password"
+title = "One-Time Password"
 +++
 
 The Haskell Cryptography Group presents its One-Time Password package
