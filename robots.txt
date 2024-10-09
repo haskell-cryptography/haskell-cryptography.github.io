@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haskell-cryptography.org/sitemap.xml
