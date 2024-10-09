@@ -20,7 +20,7 @@ url = "/projects/one-time-password"
 [[extra.list]]
 title = "OpenSSL bindings"
 content = "Bindings to OpenSSL, static and dynamic, with Haskell wrappers"
-url = "/projects/hsopenssl"
+url = "/projects/openssl"
 
 [[extra.list]]
 title = "And many more"
