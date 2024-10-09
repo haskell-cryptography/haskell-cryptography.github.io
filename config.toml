@@ -4,16 +4,18 @@ base_url = "https://haskell-cryptography.org"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
 theme = "adidoks"
 
 title = "Haskell Cryptography Group"
+
+[markdown]
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
 
 [extra]
 # Put all your custom variables here
@@ -30,5 +32,5 @@ section = "blog"
 url = "/blog/"
 weight = 20
 
-[[section.extra]]
+[[extra.section.extra]]
 repo_url = "https://github.com/haskell-cryptography/"
