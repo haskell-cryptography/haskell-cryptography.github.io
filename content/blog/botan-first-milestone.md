@@ -208,7 +208,7 @@ Executive Director, Haskell Foundation
 
 <!-- Link references -->
 
-[haskell cryptography group]: https://haskell-cryptography.org/ "Haskell Cryptography Group"
+[haskell cryptography group]: https://haskell-cryptography.github.io/ "Haskell Cryptography Group"
 
 [haskell foundation]: https://haskell.foundation/ "Haskell Foundation"
 
