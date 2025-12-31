@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" as="font" href="https://haskell-cryptography.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="https://haskell-cryptography.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2"  type="font/woff2" crossorigin>
+
+
+<link rel="stylesheet" href="https://haskell-cryptography.github.io/main.css">
+
+
+
+  
+  
+  
+  
+  
+    
+  
+
+  
+  
+    
+    
+  
+  
+  
+    
+  
+  
+  
+  
+    
+  
+  
+  
+
+
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+	
+
+
+	
+
+<title>Botan: The first milestone | Haskell Cryptography Group</title>
+<meta name="description" content="A step towards improving the state of Haskell cryptography">
+<link rel="canonical" href="https://haskell-cryptography.github.io/blog/botan-first-milestone/">
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://haskell-cryptography.github.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Blog",
+            "item": "https://haskell-cryptography.github.io/blog/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Botan First Milestone",
+            "item": "https://haskell-cryptography.github.io/blog/botan-first-milestone/"
+          },
+        
+      
+    
+  }
+</script>
+
+
+
+
+
+
+
+  <meta name="theme-color" content="#fff">
+  <link rel="icon"  href="https://haskell-cryptography.github.io/favicon.svg">
+  
+    <link rel="manifest" href="https://haskell-cryptography.github.io/site.webmanifest" crossorigin>
+  
+
+
+  
+
+</head>
+
+  
+
+<body class="blog single">
+  
+  
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+	<div class="container">
+		<input class="menu-btn order-0" type="checkbox" id="menu-btn">
+		<label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+		<a class="navbar-brand order-1 order-md-0 me-auto" href="https://haskell-cryptography.github.io">Haskell Cryptography Group</a>
+		<button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+			<span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+			<span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+		</button>
+		<ul class="navbar-nav fork-me order-3 order-md-5">
+			
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/haskell-cryptography/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a>
+				</li>
+			
+		</ul>
+		<div class="collapse navbar-collapse order-4 order-md-1">
+			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+				
+					
+				
+				
+				
+					
+						<li class="nav-item">
+							<a class="nav-link" href="https://haskell-cryptography.github.io/projects/">Projects</a>
+						</li>
+					
+						<li class="nav-item blog active">
+							<a class="nav-link" href="https://haskell-cryptography.github.io/blog/">Blog</a>
+						</li>
+					
+				
+			</ul>
+			<div class="break order-6 d-md-none"></div>
+			
+				<form class="navbar-form flex-grow-1 order-7 order-md-3">
+					<input id="userinput" class="form-control is-search" type="search" placeholder="Search…"
+						aria-label="Search…" autocomplete="off">
+					<div id="suggestions" class="shadow bg-white rounded"></div>
+				</form>
+			
+		</div>
+	</div>
+</header>
+
+
+
+  
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xxl-8">
+        <article>
+          <div class="blog-header">
+            <h1>Botan: The first milestone</h1>
+            
+<p><small>Posted 2024-03-11 12:15:00&nbsp;&hyphen;&nbsp;<strong>12&nbsp;min read</strong></small><p>
+
+          </div>
+          <p class="lead">After 8 months of work, we've reached an important milestone. Now we're here to tell you about what is coming next.</p>
+          <h1 id="botan-the-first-milestone">Botan: The First Milestone</h1>
+<p>What are you using cryptography for? Would you be interested in trying something new? Perhaps an alternate backend for your cryptography needs?</p>
+<p>I am Leo Dillinger, a member of <a href="https://haskell-cryptography.github.io/" title="Haskell Cryptography Group">Haskell Cryptography Group</a>, coordinating with the <a href="https://haskell.foundation/" title="Haskell Foundation">Haskell Foundation</a> to develop free and open-source software for you and the Haskell ecosystem.</p>
+<p>We've been working on <code>botan</code>, a cryptographic kitchen sink, and after 8 months of work, we have reached an important milestone: we've successfully published the first released version <code>0.0.1</code> of  <a href="https://hackage.haskell.org/package/botan-bindings-0.0.1.0" title="botan-bindings">botan-bindings</a> and <a href="https://hackage.haskell.org/package/botan-low-0.0.1.0" title="botan-low">botan-low</a>, and <code>botan</code> has made it to <a href="https://hackage.haskell.org/package/botan-0.0.1.0/candidate" title="botan">package candidate</a> status. Now, we are hard at work on getting the first release version of <code>botan</code> ready too, and could use your feedback!</p>
+<p>Botan is an comprehensive, open-source, BSD-licenced, C++ cryptography library with a stable C API. It offers a broad variety of functionality and algorithms, including <strong>post-quantum cryptography</strong>, is developed and maintained by an active community, and has been <a href="https://botan.randombit.net/releases/audit_1.11.18.pdf" title="Botan audit">audited</a> in the past.</p>
+<p>By binding to Botan, we have solved a significant problem of providing much of the necessary 'cryptographic kitchen sink' via a suitably performant, suitably licensed, open-source library. Furthermore, we do this without imposing a large maintenance burden on the Haskell community, as we are not required to maintain the Botan cryptography library itself, only the bindings to it.</p>
+<h2 id="a-call-for-users">A call for users</h2>
+<p>Do you use one of the following libraries?</p>
+<ul>
+<li><code>cryptohash</code></li>
+<li><code>crypto-pubkey-types</code></li>
+<li><code>crypto-cipher-types</code></li>
+<li><code>cryptonite</code></li>
+<li><code>crypton</code></li>
+<li><code>password</code></li>
+</ul>
+<p>That's where you come in! We'd like you to consider giving <a href="https://github.com/haskell-cryptography/botan" title="Botan Github">botan</a> a try!</p>
+<p><code>botan-low</code> is viable out-of-box, and <code>botan</code> will be having it's own <code>0.0.1</code> release soon enough. We are interested in seeing how they perform in the real world, and we can only do that with users - we can't listen to your feedback if there isn't any!</p>
+<p>Or perhaps you may be a user of a library with one of these buried deep in the dependencies?</p>
+<ul>
+<li><code>amazonka-core</code></li>
+<li><code>hpack</code></li>
+<li><code>scotty</code></li>
+<li><code>servant</code></li>
+<li><code>stack</code></li>
+<li><code>tls</code></li>
+<li><code>x509</code></li>
+<li><code>warp</code></li>
+<li><code>websockets</code></li>
+</ul>
+<p>These are popular libraries, and their list of transitive dependents is quite large. They sit at the root of a lot of production haskell code, and anything involving networking, APIs, and the internet is likely to depend on at least one of them.</p>
+<p>Would it surprise you that they are all directly or indirectly dependent on <code>crypton</code>, which contains unaudited C implementations that must be maintained by the Haskell community as a fork after <code>cryptonite</code> was abandoned by its original author.</p>
+<p>This is a problem, and we're trying to change that with bindings to <code>botan</code>.</p>
+<p>Having a solid, reliable, and well-maintained cryptography libraries is a huge benefit to the Haskell ecosystem in general, and is essential for most commercial and industrial use cases.</p>
+<p>What are you using cryptography for? Let us know in the comments or with upvotes.</p>
+<h2 id="a-new-phase">A new phase</h2>
+<p>Today, we're here to tell you about what we're working on next.</p>
+<p>As we all know, perfect is the enemy of good; no software is perfect the first time, and we release things when they work, and then continue to improve them. We hope that this is simply the first version and first step on a journey of many improvements small and large.</p>
+<p>With this milestone, the project enters a new phase in the software development lifecycle - maintenance and development. During initial development, we were nimble, and could make choices arbitrarily - but now that we have something that works, with an initial release and users, we have to keep it working all the while we continue further development. We now have other people invested in this, and can't make choices willy-nilly - we owe it to our users and stakeholders to listen to them.</p>
+<h2 id="the-second-milestone">The second milestone</h2>
+<p>That is what this next milestone is about - listening to feedback, improving the user experience, and seeing where the pain points are. Here's what we've heard, and here's what we're planning for the next three months.</p>
+<h3 id="improved-installation-support">Improved installation support</h3>
+<p>One of the biggest pieces of feedback that we've received is the need for improved support for the installation of the <code>botan3</code> C++ library. This was a recurring item, and we've heard you loud and clear.</p>
+<p>We'd like to spend a good chunk of time improving the installation process, with a specific focus on Windows<sup class="footnote-reference"><a href="#1">1</a></sup> and Linux support, working on the CI + unit tests for improved reliability and reporting overall.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Definitely more highly requested than anticipated</p>
+</div>
+<p>We're also looking into using <code>build-type: Configure</code> to automatically fetch and/or build the latest compatible version of Botan C++ via Cabal if it is not already installed, in order to streamline the process on all operating systems - we'd like for usage to be as easy as adding <code>botan</code> to your dependencies.</p>
+<h3 id="development-of-a-drop-in-interface-replacement-for-crypton">Development of a drop-in interface replacement for <code>crypton</code></h3>
+<p>This is obviously on our mind, given our call for users, and was mentioned several times in feedback. <code>crypton</code> is a dependency in many important libraries in the Haskell ecosystem, and we would like to build an interface that is as near a drop-in replacement for <code>crypton</code> as possible.</p>
+<p>There will be some differences, as <code>botan</code> doesn't necessarily support everything<sup class="footnote-reference"><a href="#2">2</a></sup> in the same way as <code>crypton</code> does, but we'll give it our best effort to make migration as simple as possible.</p>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>There are a few things that <code>crypton</code> supports that <code>botan</code> doesn't, but also vice versa - <code>botan</code> supports things like modern post-quantum algorithms and <code>crypton</code> doesn't.</p>
+</div>
+<h3 id="development-of-a-high-level-libsodium-like-interface">Development of a high-level libsodium-like interface</h3>
+<p>We'd like to expose a high-level libsodium-like interface of selected best-in-class algorithms in order to make usage dead simple. We don't want you managing primitives yourselves - we want you calling a simple function purely or in an appropriate monad / transformer.</p>
+<blockquote>
+<p>This might be a bit of a stretch goal, in favor of focusing on replacing <code>crypton</code>.</p>
+</blockquote>
+<h3 id="continued-development-of-the-cryptographic-typeclasses">Continued development of the cryptographic typeclasses</h3>
+<p>The development of <a href="https://discourse.haskell.org/t/botan-bindings-devlog/6855/" title="Cryptographic typeclasses">cryptographic typeclasses</a> is ongoing, in an effort to improve per-algorithm type safety and ergonomics through more consistent handling of cryptographic primitives such as keys, nonces, and ciphertexts.</p>
+<blockquote>
+<p>This is also a necessity for the <code>crypton</code> drop-in replacement.</p>
+</blockquote>
+<h3 id="continued-refinement-of-botan">Continued refinement of <code>botan</code></h3>
+<p>There are many continued refinements and improvements to the <code>botan</code> library that we would like to apply.</p>
+<p>Improved error handling is a big one, as we'd like to use <code>HasCallstack</code> appropriately throughout the library.</p>
+<p>We'd also like to work on the <code>MonadRandomIO / NonDeterministic</code> monad in order to integrate with <code>random</code> and take advantage of the <code>Uniform</code> class to make sampling / generation of random data easy.</p>
+<p>We'd like to also take advantage of the secure memory erasure by providing functions for creating temporary objects that are automatically zeroed when they go out of scope. This is a big one, we don't want sensitive data hanging around in memory.</p>
+<p>Finally, we'd also like to continue improving, unifying, and standardizing the <code>botan-low</code> bindings for consistency overall, as the techniques for binding to functions were refined over time, and have not been evenly applied.</p>
+<hr />
+<p>These are some of the things that we'd like to accomplish over the coming months.</p>
+<p>You can find more details in the updated <a href="https://github.com/haskellfoundation/tech-proposals/pull/64" title="Second proposal">second funding proposal</a>. This proposal is a continuation of the efforts of the first proposal, and is motivated by the same long-term goals.</p>
+<h2 id="a-flag-planted-on-the-horizon">A flag planted on the horizon</h2>
+<p>As part of the Haskell Cryptography Group, we're about more than just maintenance of existing libraries - we want to develop a full suite of modern cryptography libraries.</p>
+<p>Cryptography is a different niche, but we see the success of Haskell web server libraries as an example of a healthy, community-driven ecosystem. There are packages ranging from the low-level like <code>wai</code> supporting multiple backends from the swiftly simple <code>scotty</code> to the deeply complex <code>servant</code>, and a supporting ecosystem - a rich set of libraries that provide a flexible enough set of solutions at whatever level of abstraction you need, that take full advantage of Haskell's powerful type system.</p>
+<p>We see the success of the haskell web server ecosystem as an example of a healthy, developed niche, and as an example of Haskell making something safer and easier to use - something that we aspire to do with cryptography.</p>
+<p>That level of development takes work, and time, and we've just hit our first milestone - bindings to a modern, stable, audited open-source cryptography library. Now begins the long work of establishing an ecosystem on top of it.</p>
+<p>Here's what we're looking into for the long-term future:</p>
+<h3 id="improving-apis-with-higher-order-functions">Improving APIs with higher-order functions</h3>
+<p>We'd like to build higher-order functions to take care of complicated server/client multi-step algorithms, such as SRP6. Bundling up the necessary sequences of actions into a higher-order function that takes a couple of IO functions as arguments is a safer, more ergonomic, and more reliable way of performing these actions than handing the user a series of steps that they must call in the right order.</p>
+<h3 id="integration-into-libraries-as-an-alternative-to-crypton">Integration into libraries as an alternative to <code>crypton</code></h3>
+<p>We'd like to integrate <code>botan</code> with other libraries as an alternative to or replacement for<code>crypton</code>, either through the drop-in interface, or by migrating entirely - and we'd like to make that easy by providing the appropriate tools and flags.</p>
+<p>Of particular interest is the Haskell web ecosystem, which currently relies heavily on <code>crypton</code>.</p>
+<h3 id="split-off-cryptographic-classes-as-a-separate-package-to-be-backend-agnostic">Split off cryptographic classes as a separate package to be backend agnostic</h3>
+<p>We see <code>botan</code> as one of many potential backends, and backend-agnostic cryptographic typeclasses are like <code>wai</code> - a common interface. There is a difference between algorithms (sets of operations) and typeclasses (specific use cases). Algorithms are 'how we do it', typeclasses are 'what we want to use it for'. If we've defined our typeclasses correctly (as by use case), they should be backend-agnostic, regardless of the particulars of the implementation - otherwise the implementation could not fulfill its duties.</p>
+<p>For the moment, these classes are part of <code>botan</code>, and we'd eventually like to split these cryptographic classes off into their own <code>cryptography</code> library.</p>
+<h3 id="implementation-of-more-advanced-algorithms">Implementation of more advanced algorithms</h3>
+<p>There's a whole host of interesting and useful cryptography algorithms that have been developed in the last decade - including post-quantum cryptography, and we'd like to be able to provide them as tools for you to use.</p>
+<p>Once we have a stable foundation, such as <code>botan</code>, we want to move on to implementation of more advanced algorithms, such as Merkle trees and Signal's <a href="https://signal.org/docs/specifications/doubleratchet/" title="Double-ratchet">Double ratchet</a> / <a href="https://security.apple.com/blog/imessage-pq3/" title="Apple PQ3">Apple's PQ3</a></p>
+<p>We don't want you to be messing around with cryptographic primitives - we want you importing libraries like <code>double-ratchet</code><sup class="footnote-reference"><a href="#3">3</a></sup> and <code>sparse-merkle</code><sup class="footnote-reference"><a href="#3">3</a></sup> and <code>distributed-json</code><sup class="footnote-reference"><a href="#3">3</a></sup> instead of having to implement it yourself.</p>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">3</sup>
+<p>These libraries do not yet exist, but we'd like them to.</p>
+</div>
+<h3 id="building-an-application-framework-that-takes-care-of-cryptography-security">Building an application framework that takes care of cryptography &amp; security</h3>
+<p>Ultimately, we'd like to build an application framework that abstracts away cryptography &amp; security, not unlike how the Haskell web ecosystem successfully manages away much of the complexity of HTTP servers. We'd like to develop a comparable system, but for cryptography - one that comes with modern post-quantum key exchange and encryption and secure transport built-in. Wouldn't that be something - an application framework with out-of-box working post-quantum transport scheme?</p>
+<p>Easy-to-create applications with built-in security could be a killer application for Haskell, in an era where data safety is becoming a primary concern.</p>
+<h2 id="how-can-you-help">How can you help?</h2>
+<p>We've already taken the first step of binding to a modern, stable cryptography library. Now it is time to take the next. We'd like to ensure the longevity of this project as we tackle the next set of challenges.</p>
+<p>We need users, and we need sponsors!</p>
+<p>You can help us by commenting, voting, or pledging support - your activity here lets us know that you are interested in what we've done and what we're going to be doing. but it also has a tangible effect of demonstrating the ongoing success of this project!</p>
+<p>Help us keep going! Follow the <a href="https://discourse.haskell.org/t/botan-bindings-devlog/6855/" title="Devlog">devlog</a> for more frequently updated details!</p>
+<h2 id="special-thanks">Special thanks</h2>
+<p>Huge thanks to <a href="https://mercury.com" title="Mercury">Mercury</a> for funding the <a href="https://github.com/haskellfoundation/tech-proposals/pull/57" title="First proposal">first proposal</a> and helping us reach this milestone - this library would not be in this state without their support. If you are an engineer looking for a savvy place to work, I hear they are <a href="https://www.reddit.com/r/haskell/comments/1akeujj/comment/kp7g0rf/" title="Mercury hiring">hiring</a>!</p>
+<h2 id="signed">Signed</h2>
+<p>Leo Dillinger,<br />
+Haskell Cryptography Group</p>
+<p>Hecaté,<br />
+Haskell Cryptography Group</p>
+<p>Jose Calderon,<br />
+Executive Director, Haskell Foundation</p>
+<h3 id="appendix-links">Appendix: Links</h3>
+<ul>
+<li><a href="https://haskell-cryptography.github.io/" title="Haskell Cryptography Group">Haskell Cryptography Group</a></li>
+<li><a href="https://haskell.foundation/" title="Haskell Foundation">Haskell Foundation</a></li>
+<li><a href="https://mercury.com" title="Mercury">Mercury</a></li>
+<li><a href="https://www.reddit.com/r/haskell/comments/1akeujj/comment/kp7g0rf/" title="Mercury hiring">Mercury hiring</a></li>
+<li><a href="https://github.com/haskell-cryptography/botan" title="Botan Github">Botan Github</a></li>
+<li><a href="https://hackage.haskell.org/package/botan-bindings-0.0.1.0" title="botan-bindings">botan-bindings</a></li>
+<li><a href="https://hackage.haskell.org/package/botan-low-0.0.1.0" title="botan-low">botan-low</a></li>
+<li><a href="https://hackage.haskell.org/package/botan-0.0.1.0/candidate" title="botan">botan</a></li>
+<li><a href="https://botan.randombit.net/releases/audit_1.11.18.pdf" title="Botan audit">Botan audit</a></li>
+<li><a href="https://github.com/haskellfoundation/tech-proposals/pull/57" title="First proposal">First proposal</a></li>
+<li><a href="https://github.com/haskellfoundation/tech-proposals/pull/64" title="Second proposal">Second proposal</a></li>
+<li><a href="https://discourse.haskell.org/t/botan-bindings-devlog/6855/" title="Devlog">Devlog</a></li>
+<li><a href="https://discourse.haskell.org/t/botan-bindings-devlog/6855/" title="Cryptographic typeclasses">Cryptographic typeclasses</a></li>
+<li><a href="https://signal.org/docs/specifications/doubleratchet/" title="Double-ratchet">Double-ratchet</a></li>
+<li><a href="https://security.apple.com/blog/imessage-pq3/" title="Apple PQ3">Apple PQ3</a></li>
+</ul>
+<!-- Link references -->
+<!-- Footnotes are embedded elsewhere -->
+
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    
+<footer class="footer text-muted">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 order-last order-lg-first">
+				<ul class="list-inline">
+					
+						<li class="list-inline-item">Powered by <a href="https://www.getzola.org/">Zola</a>, and <a href="https://github.com/aaranxu/adidoks">AdiDoks</a></li>
+					
+				</ul>
+			</div>
+			<div class="col-lg-8 order-first order-lg-last text-lg-end">
+				<ul class="list-inline">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+  
+
+  
+<script type="text/javascript" src="https://haskell-cryptography.github.io/js/main.js" defer></script>
+
+  <script type="text/javascript" src="https://haskell-cryptography.github.io/plugins/elasticlunr.min.js" defer></script>
+  <script type="text/javascript" src="https://haskell-cryptography.github.io/search_index.en.js" defer></script>
+  <script type="text/javascript" src="https://haskell-cryptography.github.io/js/search.js" defer></script>
+
+  
+</body>
+</html>
